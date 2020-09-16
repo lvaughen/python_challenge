@@ -68,16 +68,6 @@ for rev in rev_mon:
 
 
 ave_rev_delta = sum_delta_tot/ (len(row_count)-1)
-print(ave_rev_delta)
-
-# print output
-# print("Financial Analysis")
-# print('----------------------------')
-# print(f'Total Months: {len(row_count)}')
-# print(f'Total Profit: ${profit_tot}')
-# print(f'Average Change: ${ave_rev_delta}')
-# print(f'Greatest Increase in Profits: {rev_name[index_high]} ${max_rev_mon}')
-# print(f'Greatest Decrease in Profits: {rev_name[index_low]} ${min_rev_mon}')
 
 
 ouput_list = []
@@ -89,6 +79,20 @@ ouput_list.append(print(f'Total Profit/Loss: ${profit_tot}'))
 ouput_list.append(print(f'Average Change: ${int(ave_rev_delta)}'))
 ouput_list.append(print(f'Greatest Increase in Profits: {rev_name[index_high]} ${max_rev_mon}'))
 ouput_list.append(print(f'Greatest Decrease in Profits: {rev_name[index_low]} ${min_rev_mon}'))
+
+report_data = f"""
+Financial Analysis
+----------------------------
+Total Months: {len(row_count)}
+Total Profit/Loss: ${profit_tot}
+Average Change: ${int(ave_rev_delta)}
+Greatest Increase in Profits: {rev_name[index_high]} ${max_rev_mon}
+Greatest Decrease in Profits: {rev_name[index_low]} ${min_rev_mon}
+"""
+
+
+print(report_data)
+
 
 # print(ouput_list)
 
@@ -104,19 +108,19 @@ with open(output_path, 'w') as csvout:
         #csvwriter = csv.writer(csvout, delimiter=",")
         #csvwriter.writerow(output_list)
 
-    csvout.write("Financial Analysis")
-    csvout.write("\n")
-    csvout.write('----------------------------')
-    csvout.write("\n")
-    csvout.write('Total Months: 86')
-    csvout.write("\n")
-    csvout.write('Total Profit/Loss: $-2315.0')
-    csvout.write("\n")
-    csvout.write('Average Change: $446309')
-    csvout.write("\n")
-    csvout.write('Greatest Increase in Profits: Feb-2012 $1170593.0')
-    csvout.write("\n")
-    csvout.write('Greatest Decrease in Profits: Sep-2013 $-1196225.0')
+    csvout.write(report_data)
+    # csvout.write("\n")
+    # csvout.write('----------------------------')
+    # csvout.write("\n")
+    # csvout.write('Total Months: 86')
+    # csvout.write("\n")
+    # csvout.write('Total Profit/Loss: $-2315.0')
+    # csvout.write("\n")
+    # csvout.write('Average Change: $446309')
+    # csvout.write("\n")
+    # csvout.write('Greatest Increase in Profits: Feb-2012 $1170593.0')
+    # csvout.write("\n")
+    # csvout.write('Greatest Decrease in Profits: Sep-2013 $-1196225.0')
 
     # for line in ouput_list:
     #     csvout.write(line)
