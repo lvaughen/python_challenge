@@ -99,10 +99,10 @@ output_path = os.path.join("Analysis","results.csv")
 # Open the file using "write" mode. Specify the variable to hold the contents
 # with open("results.csv", 'w') as csvout:
 with open(output_path, 'w') as csvout:
-    # csvout.writelines(ouput_list)
+     # csvout.writelines(ouput_list)
 
-        # csvwriter = csv.writer(csvout, delimiter=",")
-        # csvwriter.writerow(output_list)
+        #csvwriter = csv.writer(csvout, delimiter=",")
+        #csvwriter.writerow(output_list)
 
     csvout.write("Financial Analysis")
     csvout.write("\n")
@@ -110,7 +110,7 @@ with open(output_path, 'w') as csvout:
     csvout.write("\n")
     csvout.write('Total Months: 86')
     csvout.write("\n")
-    csvout.write('Total Profit/Loss: $38382578.0')
+    csvout.write('Total Profit/Loss: $-2315.0')
     csvout.write("\n")
     csvout.write('Average Change: $446309')
     csvout.write("\n")
