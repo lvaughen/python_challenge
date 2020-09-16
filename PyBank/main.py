@@ -70,15 +70,6 @@ for rev in rev_mon:
 ave_rev_delta = sum_delta_tot/ (len(row_count)-1)
 
 
-ouput_list = []
-
-ouput_list.append(print("Financial Analysis"))
-ouput_list.append(print('----------------------------'))
-ouput_list.append(print(f'Total Months: {len(row_count)}'))
-ouput_list.append(print(f'Total Profit/Loss: ${profit_tot}'))
-ouput_list.append(print(f'Average Change: ${int(ave_rev_delta)}'))
-ouput_list.append(print(f'Greatest Increase in Profits: {rev_name[index_high]} ${max_rev_mon}'))
-ouput_list.append(print(f'Greatest Decrease in Profits: {rev_name[index_low]} ${min_rev_mon}'))
 
 report_data = f"""
 Financial Analysis
@@ -109,28 +100,4 @@ with open(output_path, 'w') as csvout:
         #csvwriter.writerow(output_list)
 
     csvout.write(report_data)
-    # csvout.write("\n")
-    # csvout.write('----------------------------')
-    # csvout.write("\n")
-    # csvout.write('Total Months: 86')
-    # csvout.write("\n")
-    # csvout.write('Total Profit/Loss: $-2315.0')
-    # csvout.write("\n")
-    # csvout.write('Average Change: $446309')
-    # csvout.write("\n")
-    # csvout.write('Greatest Increase in Profits: Feb-2012 $1170593.0')
-    # csvout.write("\n")
-    # csvout.write('Greatest Decrease in Profits: Sep-2013 $-1196225.0')
-
-    # for line in ouput_list:
-    #     csvout.write(line)
-    #     csvout.write("\n")
-
-#   From Shelly import sys
-    #  text_file = open("PyBank.txt", "w")
-    # with open("PyBank.txt", "w") as text_file:
-    #     print(f"Total Months: {total_months}", file=text_file)
-    #     print(f"Total : ${total_profit}", file=text_file)
-    #     print(f"Average Change: ${average_change}", file=text_file)    
-    #     print("Greatest Increase in Profits: ", file=text_file)
-    #     print("Greatest Decrease in Profits: ", file=text_file)
+   

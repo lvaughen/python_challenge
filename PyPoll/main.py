@@ -93,6 +93,12 @@ else:
 
 
 # print output
+report_data = f"""
+Election Results
+----------------------------
+Total Votes: {vote_tot}
+----------------------------
+"""
 
 print("Election Results")
 print('----------------------------')
@@ -101,11 +107,19 @@ print('----------------------------')
 
 # for num in range(cand_num):
 for num in range(cand_num):
-    print(f' {cand_set[num]} {str(vot_perc[num])}% ({ind_vot[num]})')
+    report_data += f' {cand_set[num]} {str(vot_perc[num])}% ({ind_vot[num]})\n'
 
-print('----------------------------')
-print(f'Winner: {cand_set[winner]}')
-print('----------------------------')
+report_data += f"""
+---------------------------
+Winner: {cand_set[winner]}
+----------------------------
+"""
+
+print(report_data)
+
+
+
+
 
 
 # file output
@@ -120,26 +134,5 @@ with open(output_path, 'w') as csvout:
 #         # csvwriter = csv.writer(csvout, delimiter=",")
 #         # csvwriter.writerow(output_list)
 
-    csvout.write("Election Results")
-    csvout.write("\n")
-    csvout.write('----------------------------')
-    csvout.write("\n")
-    csvout.write('Total Votes: 3521001')
-    csvout.write("\n")
-    csvout.write('----------------------------')
-    csvout.write("\n")
-    csvout.write('Li 0.13999996023857988% (492940)')
-    csvout.write("\n")
-    csvout.write('Khan 0.6300001050837531% (2218231)')
-    csvout.write("\n")
-    csvout.write('Correy 0.19999994319797126% (704200)')
-    csvout.write("\n")
-    csvout.write('Tooley 0.02999999147969569% (105630)')
-    csvout.write("\n")
-    csvout.write('----------------------------')
-    csvout.write("\n")
-    csvout.write('Winner: Khan')
-    csvout.write("\n")
-    csvout.write('----------------------------')
-
- 
+    csvout.write(report_data)
+    
